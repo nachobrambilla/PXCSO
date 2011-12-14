@@ -42,9 +42,13 @@ $(document).ready(function() {
 							email: true
 						},
 						userpassword_admin: "required",
-						confirma: {
+						confirma_admin: {
 							equalTo: "#userpassword_admin"
-						} 
+						}, 
+						homephone_admin: {
+							require: true,
+							number: true					
+						}
 					},
 					messages: {
 						givenname_admin: "<span class='mensajes'>El nombre es obligatorio.</span>",
@@ -55,7 +59,11 @@ $(document).ready(function() {
 						},
 						userpassword_admin: "<span class='mensajes'>El password es obligatorio.</span>",
 						confirma_admin: "<span class='mensajes'>Los passwords deben ser iguales.</span>"
-					}
+					},
+					homephone_admin: {
+							require: "<span class='mensajes'>El teléfono es obligatorio.</span>",
+							number: "<span class='mensajes'>El teléfono debe ser un número.</span>"					
+						}
 				});
 		
 				if ( $("#crear-admin").valid() ) {
