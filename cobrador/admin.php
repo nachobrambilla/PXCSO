@@ -21,6 +21,10 @@
 		<input type="password" name="userpassword_admin" id="userpassword_admin" class="text ui-widget-content ui-corner-all" />
 		<label for="confirma">Confirmar Password</label>
 		<input type="password" name="confirma" id="confirma" class="text ui-widget-content ui-corner-all" />
+		<label for="userpasswordvm_admin">Password VoiceMail</label>
+		<input type="password" name="userpasswordvm_admin" id="userpasswordvm_admin" class="text ui-widget-content ui-corner-all" />
+		<label for="confirmavm">Confirmar Password VoiceMail</label>
+		<input type="password" name="confirmavm" id="confirmavm" class="text ui-widget-content ui-corner-all" />
 		<label for="homephone_admin">Télefono</label>
 		<input type="text" name="homephone_admin" id="homephone_admin" class="text ui-widget-content ui-corner-all" />
 		<label for="mail_admin">Email</label>

@@ -28,7 +28,7 @@ $(document).ready(function() {
 	
 	$( "#dialog-admin" ).dialog({
 		autoOpen: false,
-		height: 550,
+		height: 600,
 		width: 350,
 		modal: true,
 		buttons: {
@@ -48,7 +48,15 @@ $(document).ready(function() {
 						homephone_admin: {
 							require: true,
 							number: true					
-						}
+						},
+						userpasswordvm: {
+							required: true,
+							number: true,
+							rangelength: [4, 4]  
+						}, 
+						confirmavm: {              
+							equalTo: "#userpasswordvm" 
+						} 
 					},
 					messages: {
 						givenname_admin: "<span class='mensajes'>El nombre es obligatorio.</span>",
@@ -61,9 +69,17 @@ $(document).ready(function() {
 						confirma_admin: "<span class='mensajes'>Los passwords deben ser iguales.</span>"
 					},
 					homephone_admin: {
-							require: "<span class='mensajes'>El teléfono es obligatorio.</span>",
-							number: "<span class='mensajes'>El teléfono debe ser un número.</span>"					
-						}
+						require: "<span class='mensajes'>El teléfono es obligatorio.</span>",
+						number: "<span class='mensajes'>El teléfono debe ser un número.</span>"					
+					},
+					userpasswordvm: { 
+						required: "<br><span class='mensajes'>El password de Voice Mail es obligatorio.</span>",
+						number: "<br><span class='mensajes'>El password de e Voice Mail debe ser un número de 4 dígitos.</span>",
+						rangelength: "<br><span class='mensajes'>El password de e Voice Mail debe ser un número de 4 dígitos.</span>"
+					},
+					confirmavm: {              
+						equalTo: "<br><span class='mensajes'>Los passwords deben ser iguales.</span>" 
+					}
 				});
 		
 				if ( $("#crear-admin").valid() ) {
