@@ -12,7 +12,7 @@
 <div id="dialog-admin" title="Crear" hidden>
 	<form id="crear-admin">
 	<fieldset>
-		<input type="hidden" name="modifica-admin" id="modifica-admin" class="text ui-widget-content ui-corner-all" />
+		<input type="hidden" name="modifica_admin" id="modifica_admin" class="text ui-widget-content ui-corner-all" />
 		<label for="givenname_admin">Nombre</label>
 		<input type="text" name="givenname_admin" id="givenname_admin" class="text ui-widget-content ui-corner-all" />
 		<label for="sn_admin">Apellidos</label>

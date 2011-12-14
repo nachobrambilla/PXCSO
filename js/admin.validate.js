@@ -2,15 +2,13 @@ function modificar_admin (mycn) {
 	$("#ui-dialog-title-dialog-admin").html("Modificar");	
 	$.post('/includes/buscar_contacto_agenda.php', { cn: mycn }, function(datos) {
 		datos = $.parseJSON(datos);
-		$('#modifica').val(mycn);
-		$('#givenname').val(datos.givenname);
-		$('#sn').val(datos.sn);
-		$('#postaladdress').val(datos.postaladdress);
-		$('#mobile').val(datos.mobile);
-		$('#telephonenumber').val(datos.telephonenumber);
-		$('#homephone').val(datos.homephone);
-		$('#mail').val(datos.mail);
-		$('#mail2').val(datos.mail2);
+		$('#modifica_admin').val(mycn);
+		$('#givenname_admin').hide();
+		$('#sn_admin').hide();
+		$('#userpassword_admin').val(datos.givenname);
+		$('#homephone_admin').val(datos.homephone);
+		$('#departmentNumber_admin').val(datos.mail);
+		$('#mail_admin').val(datos.mail);
 	});
 	$( "#dialog-admin" ).dialog( "open" );
 }
@@ -44,14 +42,10 @@ $(document).ready(function() {
 							email: true
 						},
 						userpassword_admin: "required",
-						confirma_admin: {
+						confirma: {
 							equalTo: "#userpassword_admin"
-						}, 
-						homephone_admin {
-							required: true,
-							number: true
-						}
-					}
+						} 
+					},
 					messages: {
 						givenname_admin: "<span class='mensajes'>El nombre es obligatorio.</span>",
 						sn_admin: "<span class='mensajes'>El apellido es obligatorio.</span>",

@@ -2,7 +2,7 @@ function modificar_admin (mycn) {
 	$("#ui-dialog-title-dialog-admin").html("Modificar");	
 	$.post('/includes/buscar_contacto_agenda.php', { cn: mycn }, function(datos) {
 		datos = $.parseJSON(datos);
-		$('#modifica').val(mycn);
+	/*	$('#modifica').val(mycn);
 		$('#givenname').val(datos.givenname);
 		$('#sn').val(datos.sn);
 		$('#postaladdress').val(datos.postaladdress);
@@ -10,7 +10,7 @@ function modificar_admin (mycn) {
 		$('#telephonenumber').val(datos.telephonenumber);
 		$('#homephone').val(datos.homephone);
 		$('#mail').val(datos.mail);
-		$('#mail2').val(datos.mail2);
+		$('#mail2').val(datos.mail2);	*/	
 	});
 	$( "#dialog-admin" ).dialog( "open" );
 }
@@ -23,7 +23,7 @@ function borrar_admin (mycn) {
 $(document).ready(function() {
 
 	$( "#create-admin" ).click(function() {
-		$("#ui-dialog-title-dialog-admin").html("Crear");
+		$("#ui-dialog-title-dialog-form").html("Crear");
 		$( "#dialog-admin" ).dialog( "open" );
 	});
 	
@@ -37,35 +37,35 @@ $(document).ready(function() {
 			"Continuar" : function() {
 				$("#crear-admin").validate({
 					rules: {
-						givenname_admin: "required",
-						sn_admin: "required",
-						mail_admin: {
+						nom: "required",
+						cognoms: "required",
+						mail: {
 							required: true,
 							email: true
 						},
-						userpassword_admin: "required",
-						confirma_admin: {
-							equalTo: "#userpassword_admin"
+						contrasenia: "required",
+						confirma: {
+							equalTo: "#contrasenia"
 						} 
 					},
 					messages: {
-						givenname_admin: "<span class='mensajes'>El nombre es obligatorio.</span>",
-						sn_admin: "<span class='mensajes'>El apellido es obligatorio.</span>",
-						mail_admin: {
+						nom: "<span class='mensajes'>El nombre es obligatorio.</span>",
+						cognoms: "<span class='mensajes'>El apellido es obligatorio.</span>",
+						mail: {
 							required: "<span class='mensajes'>El email es obligatorio.</span>",
 							email: "<span class='mensajes'>El email debe ser válido.<span>"
 						},
-						userpassword_admin: "<span class='mensajes'>El password es obligatorio.</span>",
-						confirma_admin: "<span class='mensajes'>Los passwords deben ser iguales.</span>"
+						contrasenia: "<span class='mensajes'>El password es obligatorio.</span>",
+						confirma: "<span class='mensajes'>Los passwords deben ser iguales.</span>"
 					}
 				});
 		
 				if ( $("#crear-admin").valid() ) {
 					var global_datos;
-					$.post('/includes/crear_usuario.php', $("#crear-admin").serialize(), function(datos) {
-						global_datos = datos;
+					$.post('/includes/crear_contacto_agenda.php', $("#contacto").serialize(), function(datos) {
+						global_datos = datos;;
 					});
-					$('#cuerpo-admin').load('/cobrador/admin.php',function() {
+					$('#cuerpo-admin').load('/cobrador/agenda.php',function() {
 						$(".display-message").html(global_datos);
 					});
 					$("#cuerpo-admin").val("");	
@@ -90,10 +90,10 @@ $(document).ready(function() {
 			"Si": function() {
 				var global_datos;
 				var cn = $(this).data('mycn');
-				$.post('/includes/borrar_usuario.php', { cn: cn }, function(datos) {
+				$.post('/includes/borrar_contacto_agenda.php', { cn: cn }, function(datos) {
 						global_datos = datos;;
 				});
-				$('#cuerpo').load('/cobrador/admin.php',function() {
+				$('#cuerpo').load('/cobrador/agenda.php',function() {
 					$(".display-message").html(global_datos);
 				});	
 				$( this ).dialog( "close" );

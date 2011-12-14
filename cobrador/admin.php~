@@ -9,24 +9,24 @@
 <div class="grid_2_3" id="cuerpo-admin">
 <div class="demo">
 
-<div id="dialog-admin" title="Crear" hidden>
+<div id="dialog-admin" title="Crear">
 	<form id="crear-admin">
 	<fieldset>
 		<input type="hidden" name="modifica-admin" id="modifica-admin" class="text ui-widget-content ui-corner-all" />
-		<label for="givenname_admin">Nombre</label>
-		<input type="text" name="givenname_admin" id="givenname_admin" class="text ui-widget-content ui-corner-all" />
-		<label for="sn_admin">Apellidos</label>
-		<input type="text" name="sn_admin" id="sn_admin" class="text ui-widget-content ui-corner-all" />
-		<label for="userpassword_admin">Password</label>
-		<input type="password" name="userpassword_admin" id="userpassword_admin" class="text ui-widget-content ui-corner-all" />
+		<label for="nom">Nombre</label>
+		<input type="text" name="nom" id="nom" class="text ui-widget-content ui-corner-all" />
+		<label for="cognoms">Apellidos</label>
+		<input type="text" name="cognoms" id="cognoms" class="text ui-widget-content ui-corner-all" />
+		<label for="contrasenia">Password</label>
+		<input type="password" name="contrasenia" id="contrasenia" class="text ui-widget-content ui-corner-all" />
 		<label for="confirma">Confirmar Password</label>
 		<input type="password" name="confirma" id="confirma" class="text ui-widget-content ui-corner-all" />
-		<label for="homephone_admin">Télefono</label>
-		<input type="text" name="homephone_admin" id="homephone_admin" class="text ui-widget-content ui-corner-all" />
-		<label for="mail_admin">Email</label>
-		<input type="text" name="mail_admin" id="mail_admin" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="departmentNumber_admin">Tipo</label>
-		<select name="departmentNumber_admin" id="departmentNumber_admin" class="select ui-widget-content ui-corner-all">
+		<label for="tel">Télefono</label>
+		<input type="text" name="tel" id="tel" class="text ui-widget-content ui-corner-all" />
+		<label for="mail">Email</label>
+		<input type="text" name="mail" id="mail" value="" class="text ui-widget-content ui-corner-all" />
+		<label for="tipo">Tipo</label>
+		<select name="tipo" id="tipo" class="select ui-widget-content ui-corner-all">
 			<option value="1">admin</option>
 			<option value="2" selected>cobrador</option>		
 		</select>
@@ -66,8 +66,8 @@
 						<tr id="<?= $value['cn'][0]?>">
 							<td><?= $value['cn'][0]; ?></td>
 							<td><? if ($value['departmentnumber'][0] == "1") { echo "admin"; } else if ($value['departmentnumber'][0] == "2") { echo "cobrador"; } ?></td>
-							<td><input type="button" id="modificar_admin" value="Modificar" onclick="javascript:modificar_admin('<?=$value['cn'][0]?>')"></td>
-							<td><input type="button" id="borrar_admin" value="Borrar" onclick="javascript:borrar_admin('<?=$value['cn'][0]?>')"></td>
+							<td><input type="button" value="Modificar" onclick="javascript:modificar_admin('<?=$value['cn'][0]?>')"></td>
+							<td><input type="button" value="Borrar" onclick="javascript:borrar_admin('<?=$value['cn'][0]?>')"></td>
 						</tr>
 						<? } } ?>
 					<? } else { ?>

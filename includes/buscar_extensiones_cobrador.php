@@ -14,8 +14,10 @@ if ($connect) {
 		$info = ldap_get_entries($connect, $search);
 		$info = $info[0]['extensions'][0];
 		$extensions = explode(";", $info, -1);
-		$ext_1 = explode(",", $extensions[0]);
-		$beg = $ext_1[0];
+		if (!empty($extensions)) {
+			$ext_1 = explode(",", $extensions[0]);
+			$beg = $ext_1[0];
+		}
 	}
 	else{
 		echo "<h4>Cobrador no identificado. Comuniquese con el administrador</h4>";
