@@ -1,0 +1,29 @@
+<link media="all" type="text/css" href="/css/jquery-ui.css" rel="stylesheet">
+<link media="all" type="text/css" href="/css/ui.theme.css" rel="stylesheet">
+<link media="all" type="text/css" href="/css/styles.css" rel="stylesheet">	
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/js/autenticar.js"></script>
+<body class="body-index">
+<form id="autenticar" name="autenticar" method="POST">
+	<table id="tabla-index" class="ui-widget centrar">
+		<tr>
+			<td class="arriba">User:</td>
+			<td class="arriba"><input type="text" id="user" name="user" class="inputs"></td>
+			<td rowspan=3><img src="/img/logo.jpg" class="logoimgent" /></td>
+		</tr>
+		<tr>
+			<td class="arriba">Password:</td>
+			<td class="arriba"><input type="password" id="pass" name="pass" class="inputs"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class="abajo"><input id="entrar" type="button" value="Entrar"</td>
+		</tr>
+		<tr>
+			<td id="message" class="msn-index mensajes" colspan=3></td>		
+		</tr>
+	</table>
+</form>
+</body>

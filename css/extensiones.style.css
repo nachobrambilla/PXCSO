@@ -1,0 +1,11 @@
+#content { 	font-size: 1.2em; /* for the rest of the page to show at a normal size */
+				font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+				width: 950px; margin: auto;
+        }
+.box { border: 1px solid #888; padding: 15px; margin:12px; }
+.code { margin: 6px; padding: 9px; background-color: #fdf5ce; border: 1px solid #c77405; }
+fieldset { padding: 0.5em 2em }
+hr { margin: 0.5em 0; clear: both; }
+a { cursor: pointer; }
+#requirements li { line-height: 1.6em; }
+.timepicker {width: 70px;}
