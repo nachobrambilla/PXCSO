@@ -19,9 +19,9 @@ if ($connect) {
 		$_SESSION['voiceMailPassword'] = $_POST['voiceMailPassword'];
 
 		if (ldap_modify($connect, $base, $info)) {
-			$string = 'moduser '.$_SESSION['user'].' '.$_SESSION['pass'].' '.$_SESSION['voiceMailPassword'];
 			echo "Datos modificados correctamente";
-			$fichero = '../asterisk_talk/mod/'.$cn;
+			$string = 'moduser '.$_SESSION['user'].' '.$_SESSION['pass'].' '.$_SESSION['voiceMailPassword'];
+			$fichero = '../asterisk_talk/mod/'.$_SESSION['user'];
 			unlink($fichero);
 			$fp = fopen($fichero, "w");
 			fputs($fp, $string); 

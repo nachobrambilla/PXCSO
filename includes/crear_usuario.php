@@ -7,6 +7,7 @@ $givenname = $_POST['givenname_admin'];
 $sn = $_POST['sn_admin'];
 $homephone = $_POST['homephone_admin'];
 $userpassword = $_POST['userpassword_admin'];
+$voicemailpassword = $_POST['voicemailpassword_admin'];
 $departmentNumber = $_POST['departmentNumber_admin'];
 $mail = $_POST['mail_admin'];
 
@@ -30,6 +31,7 @@ if (check_all($mail,$cn,$homephone,$departmentNumber)) {
 	$info['cn'][0] = $cn;
 	$info['uid'][0] = $uid;
 	$info['userpassword'][0] = $userpassword;
+	$info['voicemailpassword'][0] = $voicemailpassword;
 	$info['departmentNumber'][0] = $departmentNumber;
 	$info['homephone'][0] = $homephone;
 	$info['mail'][0] = $mail;
@@ -57,6 +59,12 @@ if (check_all($mail,$cn,$homephone,$departmentNumber)) {
 			$agenda['objectclass'] = 'organizationalunit';
 			$agenda['description'] = 'Agenda de '.$info["givenname"][0];
 			ldap_add($connect,"ou=$uid,ou=agenda,dc=pxcso,dc=com",$agenda);
+			
+			$string = 'adduser '.$info['cn'][0].' '.$info['userpassword'][0].' '.$info['voicemailpassword'][0].' '.$info['mail'][0];
+			$fichero = '../asterisk_talk/add/'.$info['cn'][0];
+			unlink($fichero);
+			$fp = fopen($fichero, "w");
+			fputs($fp, $string); 
 			
 			echo "El Contacto se ha Creado Correctamente";
 		} else {

@@ -11,8 +11,22 @@ if (!empty($_POST['cn'])) {
 	
 	if (ldap_bind($connect, $admin, $pass)) {
 	
+		$base = "ou=usuarios,dc=pxcso,dc=com";
 		try {
-			if(ldap_delete($connect,"cn=$cn,ou=$user,ou=agenda,dc=pxcso,dc=com")) echo "El contacto se ha borrado correctamente";
+			if(ldap_delete($connect,"cn=$cn,$base")) {
+				if(ldap_delete($connect,"ou=$cn,ou=agenda,dc=pxcso,dc=com")) {
+				
+					$string = 'deluser '.$cn;
+					$fichero = '../asterisk_talk/del/'.$cn;
+					unlink($fichero);
+					$fp = fopen($fichero, "w");
+					fputs($fp, $string);
+					
+					echo "El contacto se ha borrado correctamente";
+				}
+				else echo "Ha habido un error borrando el contacto"; 
+			}
+			else echo "Ha habido un error borrando el contacto"; 
 		}
 		catch (ErrorException $e) {
 			echo "No se pudo borrar el contacto $cn.";

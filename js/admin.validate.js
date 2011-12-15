@@ -1,16 +1,13 @@
 function modificar_admin (mycn) {
 	$("#ui-dialog-title-dialog-admin").html("Modificar");	
-	$.post('/includes/buscar_contacto_agenda.php', { cn: mycn }, function(datos) {
+	$.post('/includes/buscar_usuario.php', { cn: mycn }, function(datos) {
 		datos = $.parseJSON(datos);
-		$('#modifica_admin').val(mycn);
-		$('#givenname_admin').hide();
-		$('#sn_admin').hide();
-		$('#userpassword_admin').val(datos.givenname);
-		$('#homephone_admin').val(datos.homephone);
-		$('#departmentNumber_admin').val(datos.mail);
-		$('#mail_admin').val(datos.mail);
+		$('#modifica_cn').val(mycn);
+		$('#modifica_homephone_admin').val(datos.homephone);
+		$('#modifica_departmentNumber_admin').val(datos.mail);
+		$('#modifica_mail_admin').val(datos.mail);
 	});
-	$( "#dialog-admin" ).dialog( "open" );
+	$( "#dialog-modificar" ).dialog( "open" );
 }
 
 function borrar_admin (mycn) {
@@ -25,10 +22,92 @@ $(document).ready(function() {
 		$( "#dialog-admin" ).dialog( "open" );
 	});
 	
+	$( "#dialog-modificar" ).dialog({
+		autoOpen: false,
+		height: 550,
+		width: 350,
+		modal: true,
+		buttons: {
+			"Continuar" : function() {
+				$("#modifica-admin").validate({
+					rules: {
+						modifica_mail_admin: {
+							required: true,
+							email: true
+						},
+						modifica_homephone_admin: {
+							required: true,
+							number: true					
+						},
+						modifica_confirma: {
+							equalTo: "#modifica_userpassword_admin"
+						},
+						modifica_habilitado: {
+							required: true
+						},
+						modifica_departmentNumber_admin: {
+							required: true
+						},
+						modifica_voicemailpassword_admin: {
+							number: true,
+							rangelength: [4, 4]  
+						},
+						confirma_modifica_voicemailpassword_admi: {              
+							equalTo: "#modifica_voicemailpassword_admin" 
+						} 
+					},
+					messages: {
+						modifica_habilitado: {
+							required: "<span class='mensajes'>Debe especificar si el usuario estará habilitado</span>"
+						},
+						modifica_departmentNumber_admin: {
+							required: "<span class='mensajes'>Debe especificar si el usuario será administrador</span>"
+						},
+						modifica_mail_admin: {
+							required: "<span class='mensajes'>El email es obligatorio.</span>",
+							email: "<span class='mensajes'>El email debe ser válido.<span>"
+						},
+						modifica_homephone_admin: {
+							required: "<span class='mensajes'>El teléfono es obligatorio.</span>",
+							number: "<span class='mensajes'>El teléfono debe ser un número.</span>"					
+						},
+						modifica_confirma: "<span class='mensajes'>Los passwords deben ser iguales.</span>",
+						modifica_voicemailpassword_admin: { 
+							number: "<br><span class='mensajes'>El password de e Voice Mail debe ser un número de 4 dígitos.</span>",
+							rangelength: "<br><span class='mensajes'>El password del Voice Mail debe ser un número de 4 dígitos.</span>"
+						},
+						confirma_modifica_voicemailpassword_admin: {              
+							equalTo: "<br><span class='mensajes'>Los passwords deben ser iguales.</span>" 
+						}
+					}
+				});
+		
+				if ( $("#modifica-admin").valid() ) {
+				
+					var global_datos;
+					$.post('/includes/modificar_usuario.php', $("#modifica-admin").serialize(), function(datos) {
+						global_datos = datos;
+					});
+					$('#cuerpo-admin').load('/cobrador/admin.php',function() {
+						$(".display-message").html(global_datos);
+					});
+					$("#cuerpo-admin").val("");	
+					$( this ).dialog( "close" );
+				}
+			},
+			"Cancelar": function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		close: function() {
+			$("#modifica-admin").clearForm();
+		}
+	});
+	
 	
 	$( "#dialog-admin" ).dialog({
 		autoOpen: false,
-		height: 600,
+		height: 550,
 		width: 350,
 		modal: true,
 		buttons: {
@@ -41,21 +120,27 @@ $(document).ready(function() {
 							required: true,
 							email: true
 						},
-						userpassword_admin: "required",
-						confirma_admin: {
-							equalTo: "#userpassword_admin"
-						}, 
 						homephone_admin: {
-							require: true,
+							required: true,
 							number: true					
 						},
-						userpasswordvm: {
+						habilitado: {
+							required: true
+						},
+						departmentNumber_admin: {
+							required: true
+						},
+						userpassword_admin: "required",
+						confirma_userpassword_admin: {
+							equalTo: "#userpassword_admin"
+						},
+						voicemailpassword_admin: {
 							required: true,
 							number: true,
 							rangelength: [4, 4]  
 						}, 
-						confirmavm: {              
-							equalTo: "#userpasswordvm" 
+						confirma_voicemailpassword_admin: {              
+							equalTo: "#voicemailpassword_admin" 
 						} 
 					},
 					messages: {
@@ -65,20 +150,26 @@ $(document).ready(function() {
 							required: "<span class='mensajes'>El email es obligatorio.</span>",
 							email: "<span class='mensajes'>El email debe ser válido.<span>"
 						},
+						homephone_admin: {
+							required: "<span class='mensajes'>El teléfono es obligatorio.</span>",
+							number: "<span class='mensajes'>El teléfono debe ser un número.</span>"					
+						},
+						habilitado: {
+							required: "<span class='mensajes'>Debe especificar si el usuario estará habilitado</span>"
+						},
+						departmentNumber_admin: {
+							required: "<span class='mensajes'>Debe especificar si el usuario será administrador</span>"
+						},
 						userpassword_admin: "<span class='mensajes'>El password es obligatorio.</span>",
-						confirma_admin: "<span class='mensajes'>Los passwords deben ser iguales.</span>"
-					},
-					homephone_admin: {
-						require: "<span class='mensajes'>El teléfono es obligatorio.</span>",
-						number: "<span class='mensajes'>El teléfono debe ser un número.</span>"					
-					},
-					userpasswordvm: { 
-						required: "<br><span class='mensajes'>El password de Voice Mail es obligatorio.</span>",
-						number: "<br><span class='mensajes'>El password de e Voice Mail debe ser un número de 4 dígitos.</span>",
-						rangelength: "<br><span class='mensajes'>El password de e Voice Mail debe ser un número de 4 dígitos.</span>"
-					},
-					confirmavm: {              
-						equalTo: "<br><span class='mensajes'>Los passwords deben ser iguales.</span>" 
+						confirma_userpassword_admin: "<span class='mensajes'>Los passwords deben ser iguales.</span>",
+						voicemailpassword_admin: { 
+							required: "<br><span class='mensajes'>El password de Voice Mail es obligatorio.</span>",
+							number: "<br><span class='mensajes'>El password de e Voice Mail debe ser un número de 4 dígitos.</span>",
+							rangelength: "<br><span class='mensajes'>El password del Voice Mail debe ser un número de 4 dígitos.</span>"
+						},
+						confirma_voicemailpassword_admin: {              
+							equalTo: "<br><span class='mensajes'>Los passwords deben ser iguales.</span>" 
+						}
 					}
 				});
 		
@@ -113,9 +204,9 @@ $(document).ready(function() {
 				var global_datos;
 				var cn = $(this).data('mycn');
 				$.post('/includes/borrar_usuario.php', { cn: cn }, function(datos) {
-						global_datos = datos;;
+						global_datos = datos;
 				});
-				$('#cuerpo').load('/cobrador/admin.php',function() {
+				$('#cuerpo-admin').load('/cobrador/admin.php',function() {
 					$(".display-message").html(global_datos);
 				});	
 				$( this ).dialog( "close" );
