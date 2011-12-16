@@ -9,7 +9,7 @@
 <div class="grid_2_3" id="cuerpo-admin">
 <div class="demo">
 
-<div id="dialog-admin" title="Crear" hidden>
+<div id="dialog-admin" title="Crear nuevo usuario" hidden>
 	<form id="crear-admin">
 	<fieldset>
 		<label for="givenname_admin">Nombre</label>
@@ -26,16 +26,15 @@
 		<label for="confirma_voicemailpassword_admin">Confirmar Password VoiceMail</label>
 		<input type="password" name="confirma_voicemailpassword_admin" id="confirma_voicemailpassword_admin" class="text ui-widget-content ui-corner-all" />
 		
-		<label for="homephone_admin">Télefono</label>
-		<input type="text" name="homephone_admin" id="homephone_admin" class="text ui-widget-content ui-corner-all" />
 		<label for="mail_admin">Email</label>
 		<input type="text" name="mail_admin" id="mail_admin" value="" class="text ui-widget-content ui-corner-all" />
+		
 		<label for="departmentNumber_admin">Tipo</label>
 		<select name="departmentNumber_admin" id="departmentNumber_admin" class="select ui-widget-content ui-corner-all">
 			<option value="1">admin</option>
 			<option value="2" selected>cobrador</option>		
 		</select>
-		<label for="habilitado">Habilitado</label>
+		<label for="habilitado">Habilitado para comunicación</label>
 		<select name="habilitado" id="habilitado" class="select ui-widget-content ui-corner-all">
 			<option value="1" selected>Si</option>
 			<option value="0">No</option>		
@@ -61,16 +60,12 @@
 		<label for="modifica_voicemailpassword_confirma">Confirmar Password</label>
 		<input type="password" name="modifica_voicemailpassword_confirma" id="modifica_voicemailpassword_confirma" class="text ui-widget-content ui-corner-all" />
 		
-		<label for="modifica_homephone_admin">Télefono</label>
-		<input type="text" name="modifica_homephone_admin" id="modifica_homephone_admin" class="text ui-widget-content ui-corner-all" />
-		<label for="modifica_mail_admin">Email</label>
-		<input type="text" name="modifica_mail_admin" id="modifica_mail_admin" value="" class="text ui-widget-content ui-corner-all" />
 		<label for="modifica_departmentNumber_admin">Tipo</label>
 		<select name="modifica_departmentNumber_admin" id="modifica_departmentNumber_admin" class="select ui-widget-content ui-corner-all">
 			<option value="1">admin</option>
 			<option value="2" selected>cobrador</option>		
 		</select>
-		<label for="modifica_habilitado">Habilitado</label>
+		<label for="modifica_habilitado">Habilitado para comunicación</label>
 		<select name="modifica_habilitado" id="modifica_habilitado" class="select ui-widget-content ui-corner-all">
 			<option value="1" selected> Si</option>
 			<option value="0">No</option>		
@@ -85,7 +80,7 @@
 
 	<table cellpadding="0" cellspacing="0" border="0" class="display">
 		<tr>
-			<td class="display-button"><p><input id="create-admin" type="button" value="Crear"></p></td>
+			<td class="display-button"><p><input id="create-admin" type="button" value="Crear nuevo usuario"></p></td>
 			<td class="display-message mensajes"></td>
 		</tr>
 		<tr>
@@ -102,12 +97,12 @@
 				</thead>
 				<tbody>
 						<? foreach ($info as $value) { 
-							if (!empty($value['cn'][0]) && $value['cn'][0] != $_SESSION['user']) {?>
+							if (!empty($value['cn'][0]) && $value['cn'][0] != 'monitor') {?>
 						<tr id="<?= $value['cn'][0]?>">
 							<td><?= $value['cn'][0]; ?></td>
 							<td><? if ($value['departmentnumber'][0] == "1") { echo "admin"; } else if ($value['departmentnumber'][0] == "2") { echo "cobrador"; } ?></td>
-							<td><input type="button" value="Modificar" onclick="javascript:modificar_admin('<?=$value['cn'][0]?>')"></td>
-							<td><input type="button" value="Borrar" onclick="javascript:borrar_admin('<?=$value['cn'][0]?>')"></td>
+							<td class="centrar_columna"><input type="button" value="Modificar" onclick="javascript:modificar_admin('<?=$value['cn'][0]?>')"></td>
+							<td class="centrar_columna"><input type="button" value="Borrar" onclick="javascript:borrar_admin('<?=$value['cn'][0]?>')"></td>
 						</tr>
 						<? } } ?>
 					<? } else { ?>

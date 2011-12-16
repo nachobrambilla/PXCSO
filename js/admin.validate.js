@@ -3,9 +3,7 @@ function modificar_admin (mycn) {
 	$.post('/includes/buscar_usuario.php', { cn: mycn }, function(datos) {
 		datos = $.parseJSON(datos);
 		$('#modifica_cn').val(mycn);
-		$('#modifica_homephone_admin').val(datos.homephone);
 		$('#modifica_departmentNumber_admin').val(datos.mail);
-		$('#modifica_mail_admin').val(datos.mail);
 	});
 	$( "#dialog-modificar" ).dialog( "open" );
 }
@@ -24,21 +22,13 @@ $(document).ready(function() {
 	
 	$( "#dialog-modificar" ).dialog({
 		autoOpen: false,
-		height: 550,
+		height: 500,
 		width: 350,
 		modal: true,
 		buttons: {
 			"Continuar" : function() {
 				$("#modifica-admin").validate({
 					rules: {
-						modifica_mail_admin: {
-							required: true,
-							email: true
-						},
-						modifica_homephone_admin: {
-							required: true,
-							number: true					
-						},
 						modifica_confirma: {
 							equalTo: "#modifica_userpassword_admin"
 						},
@@ -62,14 +52,6 @@ $(document).ready(function() {
 						},
 						modifica_departmentNumber_admin: {
 							required: "<span class='mensajes'>Debe especificar si el usuario será administrador</span>"
-						},
-						modifica_mail_admin: {
-							required: "<span class='mensajes'>El email es obligatorio.</span>",
-							email: "<span class='mensajes'>El email debe ser válido.<span>"
-						},
-						modifica_homephone_admin: {
-							required: "<span class='mensajes'>El teléfono es obligatorio.</span>",
-							number: "<span class='mensajes'>El teléfono debe ser un número.</span>"					
 						},
 						modifica_confirma: "<span class='mensajes'>Los passwords deben ser iguales.</span>",
 						modifica_voicemailpassword_admin: { 
@@ -120,10 +102,6 @@ $(document).ready(function() {
 							required: true,
 							email: true
 						},
-						homephone_admin: {
-							required: true,
-							number: true					
-						},
 						habilitado: {
 							required: true
 						},
@@ -149,10 +127,6 @@ $(document).ready(function() {
 						mail_admin: {
 							required: "<span class='mensajes'>El email es obligatorio.</span>",
 							email: "<span class='mensajes'>El email debe ser válido.<span>"
-						},
-						homephone_admin: {
-							required: "<span class='mensajes'>El teléfono es obligatorio.</span>",
-							number: "<span class='mensajes'>El teléfono debe ser un número.</span>"					
 						},
 						habilitado: {
 							required: "<span class='mensajes'>Debe especificar si el usuario estará habilitado</span>"

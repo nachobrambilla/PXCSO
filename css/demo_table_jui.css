@@ -109,8 +109,8 @@ table.display thead th div.DataTables_sort_wrapper span {
 
 .dataTables_wrapper {
 	position: relative;
-	min-height: 302px;
-	height: 302px;
+	/*min-height: 302px;*/
+	/*height: 302px;*/
 	clear: both;
 	/*width: 980px;*/
 }
@@ -446,6 +446,7 @@ tr.odd.gradeC td.sorting_2 {
 }
 
 tr.odd.gradeC td.sorting_3 {
+
 	background-color: #d1d1ff;
 }
 

@@ -15,7 +15,7 @@
  		</tr>
 		<tr>
 			<td><label>*Email: </label></td>
-			<td><input name="mymail" id="mymail" type="text" value="<?= $_SESSION['mail']; ?>"> </td>
+			<td><?= $_SESSION['mail']; ?></td>
 			<td><label>*Teléfono: </label></td>
 			<td><input name="telefono" id="telefono" type="text" value="<?= $_SESSION['telefono']; ?>"></td>
 			<td colspan=2 rowspan=5 class="logotd"><img src="/img/logo.jpg" class="logoimg" /></td>

@@ -1,15 +1,15 @@
 <?
 include('control_sesion.php');
 include('conex.php');
-error_reporting(1);
 $extensions = "";
 $i=0;
+$count = 0;
 $string_extensiones = "extension ";
 foreach($_POST as $value) {
 	$extensions .= $value;
 	if ($i == 1) {
-		if ($value == 1) $string_extensiones .= "SI";
-		else $string_extensiones .= "NO";
+		if ($value == 1) $string_extensiones .= "si";
+		else $string_extensiones .= "no";
 		$extensions .= ",";
 		$string_extensiones .= " ";
 	}
@@ -20,9 +20,9 @@ foreach($_POST as $value) {
 		$string_extensiones .= " ";
 	}
 	else if ($i == 5) {
-		if ($value == 1) $string_extensiones .= "SI";
-		else $string_extensiones .= "NO";
-		$string_extensiones .= "\nextension ";
+		if ($value == 1) $string_extensiones .= "si";
+		else $string_extensiones .= "no";
+		if ($count < 59) $string_extensiones .= "\nextension ";
 		$extensions .= ";";
 	}
 	else {
@@ -32,7 +32,9 @@ foreach($_POST as $value) {
 	}
 	$i++;
 	if ($i == 6) $i = 0;
+	++$count;
 }
+$string_extensiones .= "\n";
 
 if ($connect) { 
 	$user = "cn=admin,dc=pxcso,dc=com";

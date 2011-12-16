@@ -1,7 +1,0 @@
-$(document).ready(function() {
-	$('#guardarext').click(function() {
-		$.post('/includes/modificar_extensiones_cobrador.php', $("#ext").serialize(), function(datos) {
-				$("#msn-ext").html(datos);
-		});	
-	});
-});

@@ -64,8 +64,8 @@
 							<td><?= $value['sn'][0]; ?></td>
 							<td><?= $value['givenname'][0]; ?></td>
 							<td><? if(isset($value['mobile'][0])) echo $value['mobile'][0]; ?></td>
-							<td><input type="button" value="Modificar" onclick="javascript:modificar('<?=$value['cn'][0]?>')"></td>
-							<td><input type="button" value="Borrar" onclick="javascript:borrar('<?=$value['cn'][0]?>')"></td>
+							<td class="centrar_columna"><input type="button" value="Modificar" onclick="javascript:modificar('<?=$value['cn'][0]?>')"></td>
+							<td class="centrar_columna"><input type="button" value="Borrar" onclick="javascript:borrar('<?=$value['cn'][0]?>')"></td>
 						</tr>
 						<? } } ?>
 					<? } else { ?>

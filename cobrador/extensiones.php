@@ -30,14 +30,14 @@
 						<? foreach ($extensions as $extension) { ?>
 						<? $extension = explode(",", $extension);?>
 						<tr>
-							<td><input type="hidden" name="<?= $extension[0]; ?>_num" value="<?= $extension[0]; ?>"><?= $extension[0]; ?></td>
-							<td><select name="<?= $extension[0]; ?>_hab">
+							<td class="centrar_columna"><input type="hidden" name="<?= $extension[0]; ?>_num" value="<?= $extension[0]; ?>"><?= $extension[0]; ?></td>
+							<td class="centrar_columna"><select name="<?= $extension[0]; ?>_hab">
 								<option value="0" <? if ($extension[1] == "0") echo "selected"; ?>>No</option>
 							   <option value="1" <? if ($extension[1] == "1") echo "selected"; ?>>Si</option>
 							   </select>
 							</td>
-							<td><input type="text" name="<?= $extension[0]; ?>_horaBeg" value="<?= $extension[2]; ?>" class="timepicker"> a <input type="text" name="<?= $extension[0]; ?>_horaEnd" value="<?= $extension[3]; ?>" class="timepicker"></td>
-							<td><select name="<?= $extension[0]; ?>_fow">
+							<td class="centrar_columna"><input type="text" id="beg_<?=$i;?>" name="<?= $extension[0]; ?>_horaBeg" value="<?= $extension[2]; ?>" class="timepicker"> a <input type="text" name="<?= $extension[0]; ?>_horaEnd" id="end_<?=$i;?>" value="<?= $extension[3]; ?>" class="timepicker"></td>
+							<td class="centrar_columna"><select name="<?= $extension[0]; ?>_fow">
 								<option value="000">VoiceMail</option>
 								<? for($j=$beg;  $j<$beg+10; $j++) { ?>
 									<? if($j != $extension[0]) { ?>
@@ -45,13 +45,13 @@
 									<? } ?>
 								<? } ?>							
 							</select></td>
-							<td><select name="<?= $extension[0]; ?>_nat">
+							<td class="centrar_columna"><select name="<?= $extension[0]; ?>_nat">
 								<option value="0" <? if ($extension[5] == "0") echo "selected"; ?>>No</option>
 							   <option value="1" <? if ($extension[5] == "1") echo "selected"; ?>>Si</option>
 							   </select>
 							</td>
 						</tr>
-						<? $i=+2 ;?>
+						<? ++$i ;?>
 						<? } ?>
 				</tbody>
 				</table>

@@ -1,6 +1,5 @@
 <?
 include("conex.php");
-error_reporting(0);
 
 if ($connect) { 
 	$user = "cn=" . $_POST['user'] . ",ou=usuarios,dc=pxcso,dc=com";

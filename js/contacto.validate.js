@@ -85,6 +85,7 @@ $(document).ready(function() {
 			}
 		},
 		close: function() {
+			$('#modifica').val('');
 			$("#contacto").clearForm();
 		}
 	});

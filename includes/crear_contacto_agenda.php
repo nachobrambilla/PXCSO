@@ -1,6 +1,5 @@
 <?
 include('control_sesion.php'); 
-error_reporting(0);
 $user = $_SESSION['user'];
 $name = $_POST['givenname'];
 $sn = $_POST['sn'];

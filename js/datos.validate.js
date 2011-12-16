@@ -4,10 +4,6 @@ $('#modificar').click(function() {
 		rules: { 
 			nombre: "required",
 			apellido1: "required",     
-			mymail: {              
-				required: true, 
-				email: true 
-			},  
 			telefono: {              
 				required: true, 
 				number: true
@@ -28,10 +24,6 @@ $('#modificar').click(function() {
 		messages: {
 			nombre: "<br><span class='mensajes'>El nombre es obligatorio.</span>",
 			apellido1: "<br><span class='mensajes'>El apellido es obligatorio.</span>", 
-			mymail: {              
-				required: "<br><span class='mensajes'>El email es obligatorio.</span>", 
-				email: "<br><span class='mensajes'>el email debe ser válido.</span>" 
-			},  
 			telefono: {              
 				required: "<br><span class='mensajes'>El teléfono es obligatorio.</span>",
 				number: "<br><span class='mensajes'>El teléfono debe ser un número.</span>" 

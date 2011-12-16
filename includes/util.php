@@ -56,4 +56,28 @@ function check_all($mail,$cn,$homephone,$mobile) {
 	
 	return ($error == 0);
 }
+
+function buscar_extension($extension) {
+	$cn = $_SESSION['user'];
+	include('conex.php');
+	if ($connect) { 
+		$user = "cn=" . $_SESSION['user'] . ",ou=usuarios,dc=pxcso,dc=com";
+		$pass = $_SESSION['pass'];
+		$bind = ldap_bind($connect, $user, $pass);
+		if ($bind) {
+			$base = "ou=usuarios,dc=pxcso,dc=com";
+			$filter = "extensions=*";
+			$search = ldap_search($connect, $base, $filter);
+			$data = ldap_get_entries($connect, $search);
+			
+			for ($i = 0; $i < $data['count']; ++$i) {
+				$my_extension = explode(',',$data[$i]['extensions'][0]);
+				if (intval($my_extension[0]) == $extension) return true;
+			}
+			return false;
+		}
+	}
+	ldap_close($connect);
+}
+
 ?>

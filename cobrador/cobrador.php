@@ -17,9 +17,11 @@
 		<? require('../includes/header.php'); ?>
 		<ul>
 			<li><a href="datos.php">Datos</a></li>
-			<li><a href="extensiones.php">Extensiones</a></li>
+			<?
+			include('../includes/buscar_habilitacion_usuario.php'); 
+			if ($asteriskdisabled == '0') {?><li><a href="extensiones.php">Extensiones</a></li><?}?>
 			<li><a href="agenda.php">Agenda</a></li>
-			<? if ($_SESSION["department"] == "admin") { ?><li><a href="admin.php">Admin</a><? }; ?></li>
+			<? if ($_SESSION["department"] == "admin") { ?><li><a href="admin.php">Admin</a></li><li><a href="log.php">Log</a></li><? }; ?>
 		</ul>
 	</div>
 </body>
