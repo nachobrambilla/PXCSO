@@ -22,6 +22,7 @@ $pass = "LdapPassw01";
 
 if (ldap_bind($connect, $admin, $pass)) {	
 	$base = "ou=usuarios,dc=pxcso,dc=com";
+	$cn = strtolower($cn);
 	
 	if ($habilitado == '1') {
 		$string_habilitar = "enable ".$cn;
@@ -39,23 +40,17 @@ if (ldap_bind($connect, $admin, $pass)) {
 		$fp_habilitar = fopen($fichero_habilitar, "w");
 		fputs($fp_habilitar, $string_habilitar);
 
-		if (!empty($userpassword)) {
-			if (!empty($voicemailpassword)) 
+		if (!empty($userpassword) && !empty($voicemailpassword)) 
 				$string = "moduser ".$cn." ".$userpassword." ".$voicemailpassword;
-			else 
-				$string = "moduser ".$cn." ".$userpassword." 0";
-		}
-		else {
-			if (!empty($voicemailpassword)) 
-				$string = "moduser ".$cn." 0 ".$voicemailpassword;
-			else 
-				$string = "moduser ".$cn." 0 0";
-		}
+		else $string = '';
 		
-		$fichero = '../asterisk_talk/mod/'.$_SESSION['user'];
-		unlink($fichero);
-		$fp = fopen($fichero, "w");
-		fputs($fp, $string); 
+		if ($string != '') {
+			$fichero = '../asterisk_talk/mod/'.$cn;
+			unlink($fichero);
+			$fp = fopen($fichero, "w");
+			fputs($fp, $string); 
+		}
+		else echo "No se ha modificado ninguna contraseña <br />";
 	
 		echo "El usuario se ha modificado correctamente";
 	}

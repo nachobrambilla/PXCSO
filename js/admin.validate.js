@@ -42,7 +42,7 @@ $(document).ready(function() {
 							number: true,
 							rangelength: [4, 4]  
 						},
-						confirma_modifica_voicemailpassword_admi: {              
+						confirma_modifica_voicemailpassword_admin: {              
 							equalTo: "#modifica_voicemailpassword_admin" 
 						} 
 					},
@@ -64,8 +64,10 @@ $(document).ready(function() {
 					}
 				});
 		
-				if ( $("#modifica-admin").valid() ) {
-				
+		
+				if ($("#modifica-admin").valid() &&	(($("#modifica_userpassword_admin").val() == ''  && $("#modifica_voicemailpassword_admin").val() == '' ) ||
+					($("#modifica_userpassword_admin").val() != ''   && $("#modifica_voicemailpassword_admin").val() != '' )))  {
+					
 					var global_datos;
 					$.post('/includes/modificar_usuario.php', $("#modifica-admin").serialize(), function(datos) {
 						global_datos = datos;
@@ -75,7 +77,7 @@ $(document).ready(function() {
 					});
 					$("#cuerpo-admin").val("");	
 					$( this ).dialog( "close" );
-				}
+				} else alert('Debe cambiar ambas contraseñas o ninguna');
 			},
 			"Cancelar": function() {
 				$( this ).dialog( "close" );

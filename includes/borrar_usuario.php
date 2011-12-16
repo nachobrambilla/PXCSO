@@ -7,7 +7,6 @@ function myldap_delete($ds,$dn,$recursive=true){
         return(ldap_delete($ds,$dn));
     }else{
         $sr=ldap_list($ds,$dn,"ObjectClass=*",array(""));
-        var_dump($sr);
         $info = ldap_get_entries($ds, $sr);
         for($i=0;$i<$info['count'];$i++){
             $result=myldap_delete($ds,$info[$i]['dn'],$recursive);
@@ -27,7 +26,7 @@ if (!empty($_POST['cn'])) {
 	$pass = "LdapPassw01";
 	
 	if (ldap_bind($connect, $admin, $pass)) {
-	
+		$cn = strtolower($cn);
 		$base = "ou=usuarios,dc=pxcso,dc=com";
 		try {
 			if(ldap_delete($connect,"cn=$cn,$base")) {

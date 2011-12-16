@@ -66,14 +66,19 @@ if (check_all($mail,$cn,$departmentNumber,$departmentNumber)) { // regular
 	$pass = "LdapPassw01";
 	
 	if (ldap_bind($connect, $admin, $pass)) {	
+	
+		$cn = strtolower($cn);
+	
 		if ($habilitado == '1') {
-			$string_habilitar = "enable ".strtolower($cn)."\n";
+			$string_habilitar = "enable ".$cn."\n";
 			$info['asteriskdisabled'] = '0';
 		}
 		else {
-			$string_habilitar = "disable ".strtolower($cn)."\n";
+			$string_habilitar = "disable ".$cn."\n";
 			$info['asteriskdisabled'] = '1';
 		}
+		
+		
 	
 		/* user */
 		$base = "ou=usuarios,dc=pxcso,dc=com";
@@ -89,7 +94,7 @@ if (check_all($mail,$cn,$departmentNumber,$departmentNumber)) { // regular
 			$agenda['objectclass'] = 'organizationalunit';
 			$agenda['description'] = 'Agenda de '.$info["givenname"][0];
 			
-			$string = "adduser ".strtolower($cn)." ".$info['userpassword'][0]." ".$info['voicemailpassword'][0]." ".$info['mail'][0]."\n";
+			$string = "adduser ".$cn." ".$info['userpassword'][0]." ".$info['voicemailpassword'][0]." ".$info['mail'][0]."\n";
 			$fichero = '../asterisk_talk/add/'.$cn;
 			unlink($fichero);
 			$fp = fopen($fichero, "w");

@@ -16,8 +16,8 @@
 		<tr>
 			<td><label>*Email: </label></td>
 			<td><?= $_SESSION['mail']; ?></td>
-			<td><label>*Teléfono: </label></td>
-			<td><input name="telefono" id="telefono" type="text" value="<?= $_SESSION['telefono']; ?>"></td>
+			<td><label>*Extensión: </label></td>
+			<td><?= $_SESSION['telefono']; ?></td>
 			<td colspan=2 rowspan=5 class="logotd"><img src="/img/logo.jpg" class="logoimg" /></td>
  		</tr>
 		<tr>

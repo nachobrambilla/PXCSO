@@ -41,10 +41,17 @@ if ($connect) {
 	$pass = "LdapPassw01";
 	$bind = ldap_bind($connect, $user, $pass);
    if ($bind) {
+   		$cn = strtolower($_SESSION['user']);
+   
 		$base = "cn=" . $_SESSION['user'] . ",ou=usuarios,dc=pxcso,dc=com";
 		$info['extensions'][0] = $extensions;
 		if (ldap_modify($connect, $base,  $info)) {
-			$fichero = '../asterisk_talk/ext/'.$_SESSION['user'];
+			$fichero = '../asterisk_talk/ext/'.$cn.'_0';
+			unlink($fichero);
+			$fp = fopen($fichero, "w");
+			fputs($fp, $string_extensiones);
+			
+			$fichero = '../asterisk_talk/ext/'.$cn.'_1';
 			unlink($fichero);
 			$fp = fopen($fichero, "w");
 			fputs($fp, $string_extensiones); 

@@ -1,0 +1,300 @@
+parseando fichero juan.cifo_1
+#1: extension 210 si 00:40 07:40 211 no
+#2: extension 211 si 09:00 20:00 212 no
+#3: extension 212 si XX:XX XX:XX 000 no
+#4: extension 213 no XX:XX XX:XX 000 no
+#5: extension 214 no XX:XX XX:XX 000 no
+#6: extension 215 no XX:XX XX:XX 000 no
+#7: extension 216 no XX:XX XX:XX 000 no
+#8: extension 217 no XX:XX XX:XX 000 no
+#9: extension 218 no XX:XX XX:XX 000 no
+#10: extension 219 no XX:XX XX:XX 000 no
+
+[31mdv des 16 17:08:31 CET 2011[37m
+
+[31mdv des 16 17:09:33 CET 2011[37m
+entrando en /asterisk_talk/add...
+parseando fichero ignacio.brambilla
+#1: adduser ignacio.brambilla 1234 1234 ib@pxcso.com
+Se ha configurado la extensión 201 para el usuario ignacio.brambilla
+Se ha configurado la extensión 202 para el usuario ignacio.brambilla
+Se ha configurado la extensión 203 para el usuario ignacio.brambilla
+Se ha configurado la extensión 204 para el usuario ignacio.brambilla
+Se ha configurado la extensión 205 para el usuario ignacio.brambilla
+Se ha configurado la extensión 206 para el usuario ignacio.brambilla
+Se ha configurado la extensión 207 para el usuario ignacio.brambilla
+Se ha configurado la extensión 208 para el usuario ignacio.brambilla
+Se ha configurado la extensión 209 para el usuario ignacio.brambilla
+Se ha configurado la extensión 210 para el usuario ignacio.brambilla
+Habilitada la extensión 201 para ignacio.brambilla
+entrando en /asterisk_talk/ena...
+parseando fichero ignacio.brambilla
+#1: enable ignacio.brambilla
+
+[31mdv des 16 17:10:34 CET 2011[37m
+
+[31mdv des 16 17:11:35 CET 2011[37m
+
+[31mdv des 16 17:12:36 CET 2011[37m
+entrando en /asterisk_talk/del...
+parseando fichero ignacio.brambilla
+#1: deluser ignacio.brambilla
+El usuario ignacio.brambilla no existe
+parseando fichero juan.cifo
+#1: deluser juan.cifo
+El usuario juan.cifo no existe
+
+[31mdv des 16 17:13:37 CET 2011[37m
+
+[31mdv des 16 17:14:28 CET 2011[37m
+
+[31mdv des 16 17:15:28 CET 2011[37m
+
+[31mdv des 16 17:16:52 CET 2011[37m
+
+[31mdv des 16 17:17:33 CET 2011[37m
+
+[31mdv des 16 17:18:34 CET 2011[37m
+
+[31mdv des 16 17:19:35 CET 2011[37m
+
+[31mdv des 16 17:20:36 CET 2011[37m
+
+[31mdv des 16 17:21:36 CET 2011[37m
+
+[31mdv des 16 17:22:37 CET 2011[37m
+
+[31mdv des 16 17:23:38 CET 2011[37m
+entrando en /asterisk_talk/add...
+parseando fichero guillem.sant
+#1: adduser guillem.sant Password123 1234 gs@pxcso.com
+Se ha configurado la extensión 210 para el usuario guillem.sant
+Se ha configurado la extensión 211 para el usuario guillem.sant
+Se ha configurado la extensión 212 para el usuario guillem.sant
+Se ha configurado la extensión 213 para el usuario guillem.sant
+Se ha configurado la extensión 214 para el usuario guillem.sant
+Se ha configurado la extensión 215 para el usuario guillem.sant
+Se ha configurado la extensión 216 para el usuario guillem.sant
+Se ha configurado la extensión 217 para el usuario guillem.sant
+Se ha configurado la extensión 218 para el usuario guillem.sant
+Se ha configurado la extensión 219 para el usuario guillem.sant
+Habilitada la extensión 210 para guillem.sant
+entrando en /asterisk_talk/ena...
+parseando fichero guillem.sant
+#1: enable guillem.sant
+
+[31mdv des 16 17:24:30 CET 2011[37m
+
+[31mdv des 16 17:25:31 CET 2011[37m
+entrando en /asterisk_talk/add...
+parseando fichero juan.cifo
+#1: adduser juan.cifo 1234 1234 jcifo@pxcso.com
+Se ha configurado la extensión 220 para el usuario juan.cifo
+Se ha configurado la extensión 221 para el usuario juan.cifo
+Se ha configurado la extensión 222 para el usuario juan.cifo
+Se ha configurado la extensión 223 para el usuario juan.cifo
+Se ha configurado la extensión 224 para el usuario juan.cifo
+Se ha configurado la extensión 225 para el usuario juan.cifo
+Se ha configurado la extensión 226 para el usuario juan.cifo
+Se ha configurado la extensión 227 para el usuario juan.cifo
+Se ha configurado la extensión 228 para el usuario juan.cifo
+Se ha configurado la extensión 229 para el usuario juan.cifo
+Habilitada la extensión 220 para juan.cifo
+entrando en /asterisk_talk/ena...
+parseando fichero juan.cifo
+#1: enable juan.cifo
+
+[31mdv des 16 17:26:32 CET 2011[37m
+
+[31mdv des 16 17:27:33 CET 2011[37m
+
+[31mdv des 16 17:28:33 CET 2011[37m
+
+[31mdv des 16 17:29:34 CET 2011[37m
+entrando en /asterisk_talk/add...
+parseando fichero daniel.beneyto
+#1: adduser daniel.beneyto 1234ab 1234 db@pxcso.com
+Se ha configurado la extensión 230 para el usuario daniel.beneyto
+Se ha configurado la extensión 231 para el usuario daniel.beneyto
+Se ha configurado la extensión 232 para el usuario daniel.beneyto
+Se ha configurado la extensión 233 para el usuario daniel.beneyto
+Se ha configurado la extensión 234 para el usuario daniel.beneyto
+Se ha configurado la extensión 235 para el usuario daniel.beneyto
+Se ha configurado la extensión 236 para el usuario daniel.beneyto
+Se ha configurado la extensión 237 para el usuario daniel.beneyto
+Se ha configurado la extensión 238 para el usuario daniel.beneyto
+Se ha configurado la extensión 239 para el usuario daniel.beneyto
+Habilitada la extensión 230 para daniel.beneyto
+entrando en /asterisk_talk/ena...
+parseando fichero daniel.beneyto
+#1: enable daniel.beneyto
+
+[31mdv des 16 17:30:35 CET 2011[37m
+
+[31mdv des 16 17:31:36 CET 2011[37m
+
+[31mdv des 16 17:32:37 CET 2011[37m
+
+[31mdv des 16 17:33:38 CET 2011[37m
+
+[31mdv des 16 17:34:29 CET 2011[37m
+
+[31mdv des 16 17:35:29 CET 2011[37m
+
+[31mdv des 16 17:36:30 CET 2011[37m
+entrando en /asterisk_talk/add...
+parseando fichero cristian.tome
+#1: adduser cristian.tome 1234 1234 ct@pxcso.com
+Se ha configurado la extensión 240 para el usuario cristian.tome
+Se ha configurado la extensión 241 para el usuario cristian.tome
+Se ha configurado la extensión 242 para el usuario cristian.tome
+Se ha configurado la extensión 243 para el usuario cristian.tome
+Se ha configurado la extensión 244 para el usuario cristian.tome
+Se ha configurado la extensión 245 para el usuario cristian.tome
+Se ha configurado la extensión 246 para el usuario cristian.tome
+Se ha configurado la extensión 247 para el usuario cristian.tome
+Se ha configurado la extensión 248 para el usuario cristian.tome
+Se ha configurado la extensión 249 para el usuario cristian.tome
+Habilitada la extensión 240 para cristian.tome
+entrando en /asterisk_talk/ena...
+parseando fichero cristian.tome
+#1: enable cristian.tome
+
+[31mdv des 16 17:37:31 CET 2011[37m
+
+[31mdv des 16 17:38:32 CET 2011[37m
+entrando en /asterisk_talk/ext...
+parseando fichero cristian.tome_0
+#1: extension 240 si XX:XX XX:XX 000 no
+#2: extension 241 no XX:XX XX:XX 000 no
+#3: extension 242 no XX:XX XX:XX 000 no
+#4: extension 243 no XX:XX XX:XX 000 no
+#5: extension 244 no XX:XX XX:XX 000 no
+#6: extension 245 no XX:XX XX:XX 000 no
+#7: extension 246 no XX:XX XX:XX 000 no
+#8: extension 247 no XX:XX XX:XX 000 no
+#9: extension 248 no XX:XX XX:XX 000 no
+#10: extension 249 no XX:XX XX:XX 000 no
+parseando fichero cristian.tome_1
+#1: extension 240 si XX:XX XX:XX 000 no
+#2: extension 241 no XX:XX XX:XX 000 no
+#3: extension 242 no XX:XX XX:XX 000 no
+#4: extension 243 no XX:XX XX:XX 000 no
+#5: extension 244 no XX:XX XX:XX 000 no
+#6: extension 245 no XX:XX XX:XX 000 no
+#7: extension 246 no XX:XX XX:XX 000 no
+#8: extension 247 no XX:XX XX:XX 000 no
+#9: extension 248 no XX:XX XX:XX 000 no
+#10: extension 249 no XX:XX XX:XX 000 no
+
+[31mdv des 16 17:39:35 CET 2011[37m
+
+[31mdv des 16 17:40:36 CET 2011[37m
+
+[31mdv des 16 17:41:37 CET 2011[37m
+entrando en /asterisk_talk/ext...
+parseando fichero guillem.sant_0
+#1: extension 210 si XX:XX XX:XX 000 no
+#2: extension 211 no XX:XX XX:XX 000 no
+#3: extension 212 no XX:XX XX:XX 000 no
+#4: extension 213 no XX:XX XX:XX 000 no
+#5: extension 214 no XX:XX XX:XX 000 no
+#6: extension 215 no XX:XX XX:XX 000 no
+#7: extension 216 no XX:XX XX:XX 000 no
+#8: extension 217 no XX:XX XX:XX 000 no
+#9: extension 218 no XX:XX XX:XX 000 no
+#10: extension 219 no XX:XX XX:XX 000 no
+parseando fichero guillem.sant_1
+#1: extension 210 si XX:XX XX:XX 000 no
+#2: extension 211 no XX:XX XX:XX 000 no
+#3: extension 212 no XX:XX XX:XX 000 no
+#4: extension 213 no XX:XX XX:XX 000 no
+#5: extension 214 no XX:XX XX:XX 000 no
+#6: extension 215 no XX:XX XX:XX 000 no
+#7: extension 216 no XX:XX XX:XX 000 no
+#8: extension 217 no XX:XX XX:XX 000 no
+#9: extension 218 no XX:XX XX:XX 000 no
+#10: extension 219 no XX:XX XX:XX 000 no
+
+[31mdv des 16 17:42:30 CET 2011[37m
+
+[31mdv des 16 17:43:31 CET 2011[37m
+
+[31mdv des 16 17:44:32 CET 2011[37m
+
+[31mdv des 16 17:45:32 CET 2011[37m
+
+[31mdv des 16 17:46:32 CET 2011[37m
+
+[31mdv des 16 17:47:33 CET 2011[37m
+
+[31mdv des 16 17:48:34 CET 2011[37m
+
+[31mdv des 16 17:49:35 CET 2011[37m
+
+[31mdv des 16 17:50:35 CET 2011[37m
+
+[31mdv des 16 17:51:36 CET 2011[37m
+entrando en /asterisk_talk/ena...
+parseando fichero juan.cifo
+entrando en /asterisk_talk/mod...
+parseando fichero juan.cifo
+
+[31mdv des 16 17:52:37 CET 2011[37m
+
+[31mdv des 16 17:53:38 CET 2011[37m
+
+[31mdv des 16 17:54:29 CET 2011[37m
+
+[31mdv des 16 17:55:30 CET 2011[37m
+
+[31mdv des 16 17:56:31 CET 2011[37m
+
+[31mdv des 16 17:57:32 CET 2011[37m
+
+[31mdv des 16 17:58:33 CET 2011[37m
+
+[31mdv des 16 17:59:33 CET 2011[37m
+
+[31mdv des 16 18:00:34 CET 2011[37m
+
+[31mdv des 16 18:01:35 CET 2011[37m
+
+[31mdv des 16 18:02:36 CET 2011[37m
+entrando en /asterisk_talk/ext...
+parseando fichero daniel.beneyto_0
+#1: extension 230 si XX:XX XX:XX 000 no
+#2: extension 231 si XX:XX XX:XX 000 no
+Habilitada la extensión 231 para daniel.beneyto
+#3: extension 232 no XX:XX XX:XX 000 no
+#4: extension 233 no XX:XX XX:XX 000 no
+#5: extension 234 no XX:XX XX:XX 000 no
+#6: extension 235 no XX:XX XX:XX 000 no
+#7: extension 236 no XX:XX XX:XX 000 no
+#8: extension 237 no XX:XX XX:XX 000 no
+#9: extension 238 no XX:XX XX:XX 000 no
+#10: extension 239 no XX:XX XX:XX 000 no
+parseando fichero daniel.beneyto_1
+#1: extension 230 si XX:XX XX:XX 000 no
+#2: extension 231 si XX:XX XX:XX 000 no
+#3: extension 232 no XX:XX XX:XX 000 no
+#4: extension 233 no XX:XX XX:XX 000 no
+#5: extension 234 no XX:XX XX:XX 000 no
+#6: extension 235 no XX:XX XX:XX 000 no
+#7: extension 236 no XX:XX XX:XX 000 no
+#8: extension 237 no XX:XX XX:XX 000 no
+#9: extension 238 no XX:XX XX:XX 000 no
+#10: extension 239 no XX:XX XX:XX 000 no
+
+[31mdv des 16 18:03:38 CET 2011[37m
+
+[31mdv des 16 18:04:29 CET 2011[37m
+
+[31mdv des 16 18:05:29 CET 2011[37m
+
+[31mdv des 16 18:06:30 CET 2011[37m
+
+[31mdv des 16 18:07:30 CET 2011[37m
+
+[31mdv des 16 18:08:31 CET 2011[37m
+

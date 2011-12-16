@@ -120,6 +120,7 @@ $(document).ready(function() {
 		'auto'      : true,
 		'folder'    : 'upload_csv',
 		'fileExt'	: '*.cvs',
+		'sizeLimit' : '153600',
 		'buttonImg'   : '/img/boton.png',
 		'scriptData' : {'texto': $("#mitexto").val()},
 		'onComplete': function(event, queueID, fileObj, response, data) {
